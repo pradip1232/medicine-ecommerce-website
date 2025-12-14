@@ -1,12 +1,18 @@
 {
-  "name": "ecommerce-website",
-  "version": "0.1.0",
+  "name": "sanjeevika-nextjs",
+  "version": "1.0.0",
   "private": true,
+  "description": "Modern Next.js e-commerce application for Sanjeevika - Premium Ayurvedic Products",
+  "keywords": ["nextjs", "ecommerce", "ayurveda", "typescript", "tailwindcss"],
+  "author": "Sanjeevika Team",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .next out"
   },
   "dependencies": {
     "@types/bootstrap": "^5.2.10",
@@ -29,5 +35,9 @@
     "eslint-config-next": "16.0.10",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }

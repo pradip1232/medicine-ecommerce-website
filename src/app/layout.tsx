@@ -11,7 +11,11 @@ export const metadata: Metadata = {
   description: 'Discover authentic Ayurvedic products for health and wellness. Natural, trusted, and effective solutions for your well-being.',
   keywords: 'ayurveda, natural products, health, wellness, herbal medicine, organic',
   authors: [{ name: 'Sanjeevika' }],
-  viewport: 'width=device-width, initial-scale=1',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
