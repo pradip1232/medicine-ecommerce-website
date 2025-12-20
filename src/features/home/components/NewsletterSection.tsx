@@ -26,15 +26,31 @@ const NewsletterSection: React.FC = () => {
     setIsLoading(true)
     setMessage('')
 
-    // Simulate API call
-    setTimeout(() => {
-      setMessage('Thank you for subscribing to our newsletter!')
-      setEmail('')
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setMessage(data.message)
+        setEmail('')
+      } else {
+        setMessage(data.message)
+      }
+    } catch (error) {
+      setMessage('Failed to subscribe. Please try again.')
+    } finally {
       setIsLoading(false)
       
-      // Clear success message after 3 seconds
+      // Clear message after 3 seconds
       setTimeout(() => setMessage(''), 3000)
-    }, 1000)
+    }
   }
 
   return (
